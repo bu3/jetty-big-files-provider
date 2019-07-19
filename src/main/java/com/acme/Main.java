@@ -23,7 +23,7 @@ public class Main {
         }
     }
 
-    public void start() throws Exception {
+    public Server start() throws Exception {
         Server server = createServer();
 
         try {
@@ -32,6 +32,7 @@ public class Main {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return server;
     }
 
     private Server createServer() {
