@@ -6,4 +6,3 @@ This is a project I made to provide an example of the issue I'm facing with Jett
 2. Start the application running com.acme.Main
 3. Open http://localhost:8080
 4. Try to download file10G.txt. It gets truncated to 1.8G
-4. Try to download file4G.txt. It gets downloaded ok
