@@ -4,8 +4,10 @@ import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.servlet.DefaultServlet;
+import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.webapp.WebAppContext;
@@ -59,12 +61,12 @@ public class Main {
         server.setHandler(handlers);
     }
 
-    private WebAppContext createWebContext() {
-        WebAppContext context = new WebAppContext();
-        context.setDescriptor("../webapps/web.xml");
+    private ContextHandler createWebContext() {
+        ServletContextHandler context = new ServletContextHandler();
+//        context.setDescriptor("../webapps/web.xml");
         context.setContextPath("/");
         context.setBaseResource(getResourceCollection());
-        context.setParentLoaderPriority(true);
+//        context.setParentLoaderPriority(true);
 
         ServletHolder defHolder = new ServletHolder("default", DefaultServlet.class);
         context.addServlet(defHolder, "/");
